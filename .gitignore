@@ -1,0 +1,56 @@
+# from https://gist.github.com/chhh/4961200
+
+# Binaries
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
+*.tar
+*.zip
+*.war
+*.ear
+*.sar
+*.class
+
+# Maven 
+Java/target/
+
+# IntelliJ project files 
+*.iml
+*.iws
+*.ipr
+Java/.idea/
+Java/target/
+Java/PCP-java-exercices/.idea/
+Clojure/.idea/
+Clojure/target/
+Clojure/.nrepl-port
+
+# eclipse project file
+Java/.settings/
+Java/.classpath
+Java/.project
+
+# NetBeans specific
+Java/nbproject/private/
+Java/build/
+Java/nbbuild/
+Java/dist/
+Java/nbdist/
+Java/nbactions.xml
+Java/nb-configuration.xml
+
+
+# OS
+.DS_Store
+
+# Misc
+*.swp
+Java/release.properties
+Java/pom.xml.releaseBackup
+Java/pom.xml.tag
+
+
+*.exe
+.vscode/
