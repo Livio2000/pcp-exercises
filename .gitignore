@@ -1,4 +1,5 @@
 *.exe
 .vscode/
+.idea/
 
 Java-8/target/
