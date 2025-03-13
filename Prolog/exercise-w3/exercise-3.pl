@@ -21,3 +21,20 @@ del([H|T], X, [H|L]) :- del(T, X, L).
 %Dadurch wird X aus der Liste entfernt.
 %Falls H nicht gleich X ist, wird H in L1 übernommen.
 %del/3 wird dann rekursiv für den Rest der Liste T aufgerufen.
+
+
+%C
+mem_d(X, L) :- del(L, X, L1), L \= L1.
+
+%del(L, X, L1): Versucht, X aus L zu entfernen, das Ergebnis ist L1.
+%L \= L1: Falls L und L1 unterschiedlich sind, dann war X in L enthalten (da del/3 etwas entfernt hat).
+%Falls X nicht in L war, bleibt L1 gleich L, und der Vergleich L \= L1 schlägt fehl, wodurch mem_d/2 false ergibt.
+
+
+%D)
+rev_acc([], A, A).
+rev_acc([H | T], A, R) :- rev_acc(T, [H | A], R).
+
+
+%E)
+rev(L, R) :- rev_acc(L, [], R).
