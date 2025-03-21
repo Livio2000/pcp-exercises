@@ -45,11 +45,11 @@ blocks([A,B,C|Bs1], [D,E,F|Bs2], [G,H,I|Bs3]) :-
   all_distinct([A,B,C,D,E,F,G,H,I]),
   blocks(Bs1, Bs2, Bs3).
 
-replace_0([], []).
-replace_0([0 | T], [_ | R]) :-
-  replace_0(T, R).
-replace_0([H | T], [H | R]) :-
-  H \= 0,
+replace_0([], []).                %Falls die Eingabeliste leer ([]) ist, ist auch die Ausgabeliste leer.
+replace_0([0 | T], [_ | R]) :-    %Falls das erste Element der Eingabeliste 0 ist, wird es durch einen 
+  replace_0(T, R).                %Platzhalter (_) ersetzt, und die Rekursion wird auf den Rest der Liste angewendet.
+replace_0([H | T], [H | R]) :-    %Falls das erste Element H nicht 0 ist, bleibt es in der Ausgabeliste 
+  H \= 0,                         %unverändert, und die Funktion wird auf den Rest der Liste angewendet.
   replace_0(T, R).
 
 
@@ -73,8 +73,15 @@ relationship(JSONReply, Solution) :-
     atom_string(FirstPerson, JSONReply.firstPerson),
     atom_string(SecondPerson, JSONReply.secondPerson),
     atom_string(Relationship, JSONReply.relationship),
-    (call(Relationship, FirstPerson, SecondPerson) -> Solution = "true" ; Solution = "false").
-  
+    call_relationship(Relationship, FirstPerson, SecondPerson, Solution).
+
+call_relationship(Relationship, FirstPerson, SecondPerso, Solutionn) :-
+    call(Relationship, FirstPerson, SecondPerson),
+    Solution = "true",
+    !.
+
+call_relationship(_, _, _, "false").
+
 sudoku(JSONReply, Solution) :-
     Problem = JSONReply.sudoku,
     maplist(replace_0, Problem, Solution),

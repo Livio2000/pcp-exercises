@@ -2,4 +2,13 @@
 .vscode/
 .idea/
 
+#Clojure
+.calva/
+.lsp/
+.clj-kondo/
+.cpcache/
+.nrepl-port
+
+
+#Java
 Java-8/target/
