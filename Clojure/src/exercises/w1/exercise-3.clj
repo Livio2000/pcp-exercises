@@ -31,7 +31,6 @@
 ;result: "crazy", type: java.lang.String
 ;and gibt das erste false argument zurück oder das letzte wenn alle true sind
 
-
 (not "this" "is" "crazy")
 ;fehler (ArityException)
 ;not kann nur ein argument haben
@@ -41,7 +40,6 @@
 ;result: 2/5, type: clojure.lang.Ratio
 ;das fn macht eine funktion die 1 durch das argument teilt
 ;und das argument ist (/ 5 2) -> 5/2
-
 
 (int? 3000000000)
 (type (int? 3000000000))
