@@ -205,6 +205,6 @@
   (is (thrown? Exception (parse "(1 + 2"))))
 
 ; run the tests
-(run-tests 'woche3.uebung.parser)
+(run-tests 'exercises.w3.exercise4.parser)
 
 
